@@ -28,6 +28,10 @@
                 <td>{{contact.firstName}}</td>
                 <td>{{contact.lastName}}</td>
                 <td>{{contact.email}}</td>
+                <td>
+                    <button @click="removeContact(contact)">Remove</button>
+                </td>
+
             </tr>
         </tbody>
     </table>
@@ -44,6 +48,11 @@
                 this.contacts.push(this.newContact);// upisujemo u tabelu ovako
                 this.newContact = {};// da bi bilo prazno posle ubacivanja
                 
+            },
+            removeContact(contact){
+                let index = this.contacts.indexOf(contact);
+                this.contacts.splice(index,1);
+                console.log(index);
             }
         },
         data(){
