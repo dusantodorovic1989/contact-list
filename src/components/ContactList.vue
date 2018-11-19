@@ -52,7 +52,7 @@
             removeContact(contact){
                 let index = this.contacts.indexOf(contact);
                 this.contacts.splice(index,1);
-                console.log(index);
+                
             }
         },
         data(){
