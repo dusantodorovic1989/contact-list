@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <ContactList />
+    <PerentTest
+     :title="perentTitle"
+     @callParentFunction = "parentFunction"
+     />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ContactList from './components/ContactList.vue'
+import PerentTest from './components/PerentTest.vue'
 export default {
   name: 'app',
+
+  data(){
+    return{
+      perentTitle:'Blog title'
+    };
+  },
   components: {
     HelloWorld,
-    ContactList
+    ContactList,
+    PerentTest
+  },
+  methods:{
+    parentFunction(name,age){
+      console.log('Hi from parent' + name,age)
+    }
   }
 }
 </script>
