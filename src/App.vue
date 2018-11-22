@@ -2,11 +2,14 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ContactList />
-    <PerentTest
+    <NavBar/>
+    <!-- <ContactList /> -->
+    <!-- <PerentTest
      :title="perentTitle"
      @callParentFunction = "parentFunction"
-     />
+     /> -->
+     <router-view></router-view>
+     
   </div>
 </template>
 
@@ -14,6 +17,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import ContactList from './components/ContactList.vue'
 import PerentTest from './components/PerentTest.vue'
+import NavBar from './components/NavBar.vue'
 export default {
   name: 'app',
 
@@ -25,7 +29,8 @@ export default {
   components: {
     HelloWorld,
     ContactList,
-    PerentTest
+    PerentTest,
+    NavBar
   },
   methods:{
     parentFunction(name,age){
