@@ -12,7 +12,11 @@
         <tbody>
             <tr v-for="(contact,key) in contactsList" :key="key">
                 <td>{{key + 1}}</td>
-                <td>{{contact.firstName}}</td>
+                <td>
+                <router-link :to="{name: 'contact-details',params: {id: contact.id}}">
+                    {{contact.firstName}}
+                </router-link>
+                </td>
                 <td>{{contact.lastName}}</td>
                 <td>{{contact.email}}</td>
                 <td>

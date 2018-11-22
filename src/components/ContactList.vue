@@ -15,6 +15,8 @@
          <button type='submit'>ADD CONTACT</button>
         
     </form>
+
+    <ContactDetails :contact='routeContact' />
   
 
     
@@ -24,7 +26,7 @@
 
 <script>
 import ContactsTable from './ContactsTable';
-
+import ContactDetails from './ContactDetails';
     export default {
 
         components:{
@@ -42,8 +44,17 @@ import ContactsTable from './ContactsTable';
                 let index = this.contacts.indexOf(contact);
                 this.contacts.splice(index,1);
                 
-            }
+            },
+  
         },
+                  computed:{
+                routeContact(){
+                    let findedcontact =this.contacts.find(contact => contact.id == this.$route.params.id);
+                    console.log(findedcontact)
+                    return findedcontact;
+                }
+                
+            },
         data(){
             return{
                 newContact:{
@@ -52,11 +63,11 @@ import ContactsTable from './ContactsTable';
                     email:''
                 },
             contacts: [
-                {firstName: 'John', lastName:'Doe', email: 'example@example.com'},
-                {firstName: 'Jone', lastName:'Doe', email: 'example@example.com'},
-                {firstName: 'Jock', lastName:'Doe', email: 'example@example.com'},
-                {firstName: 'Susan', lastName:'Doe', email: 'example@example.com'},
-                {firstName: 'Jasmin', lastName:'Doe', email: 'example@example.com'},
+                {id: 1,firstName: 'John', lastName:'Doe', email: 'example@example.com'},
+                {id: 2,firstName: 'Jone', lastName:'Doe', email: 'example@example.com'},
+                {id: 3,firstName: 'Jock', lastName:'Doe', email: 'example@example.com'},
+                {id: 4,firstName: 'Susan', lastName:'Doe', email: 'example@example.com'},
+                {id: 5,firstName: 'Jasmin', lastName:'Doe', email: 'example@example.com'},
                 
 
             ]
