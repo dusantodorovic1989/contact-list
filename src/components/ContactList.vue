@@ -25,12 +25,13 @@
 </template>
 
 <script>
-import ContactsTable from './ContactsTable';
-import ContactDetails from './ContactDetails';
+import ContactsTable from './ContactsTable'
+import ContactDetails from './ContactDetails'
     export default {
 
         components:{
-                 ContactsTable
+                 ContactsTable,
+                 ContactDetails
             },
         
         methods:{
