@@ -2,6 +2,7 @@
 
 
 <div>
+    <ContactDetails :contact='routeContact' />
     <ContactsTable :contactsList='contacts'/>
     <h3>Add contact</h3>
      <form @submit.prevent='addContact'>
@@ -16,7 +17,7 @@
         
     </form>
 
-    <ContactDetails :contact='routeContact' />
+    
   
 
     
